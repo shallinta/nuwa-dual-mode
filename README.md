@@ -8,9 +8,7 @@
 
 <br>
 
-💡 想了解这个技能？来看看：[shallinta.github.io/nuwa-dual-mode](https://shallinta.github.io/nuwa-dual-mode/)
-
-<br>
+💡 快速了解这个技能：[nuwa-dual-mode 简介](https://shallinta.github.io/nuwa-dual-mode/)
 
 <br>
 
@@ -22,7 +20,7 @@
 
 女娲·Dual-Mode 是 [花叔的 nuwa-skill](https://github.com/alchaincyf/nuwa-skill) 的一个变体分支。同一份调研、同一份心智模型,通过 Persona(第一人称扮演)和 Toolkit(第三人称方法论工具)两个调用入口暴露;蒸馏开始前,女娲会先识别这个对象可能被怎么用,再按对应用法构造产物。
 
-[🌐 在线预览](https://shallinta.github.io/nuwa-dual-mode/) · [看效果](#效果示例) · [安装](#安装) · [使用](#使用) · [设计要点](#设计要点) · [工作原理](#工作原理) · [与原版的关系](#与原版-nuwa-skill-的关系)
+[🌐 介绍网站](https://shallinta.github.io/nuwa-dual-mode/) · [看效果](#效果示例) · [安装](#安装) · [使用](#使用) · [设计要点](#设计要点) · [工作原理](#工作原理) · [与原版的关系](#与原版-nuwa-skill-的关系)
 
 </div>
 
