@@ -4,7 +4,13 @@
 
 > *「角色扮演让人活过来,方法论让人能干活——双模式蒸馏二合一。」*
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Standard-green)](https://agentskills.io) [![Multi-Runtime](https://img.shields.io/badge/Runtime-Claude%20Code%20·%20Codex%20·%20Cursor%20·%20OpenClaw%20·%20Hermes-blueviolet)](#安装) [![Inspired by nuwa-skill](https://img.shields.io/badge/Inspired%20by-nuwa--skill-orange)](https://github.com/alchaincyf/nuwa-skill) [![Website](https://img.shields.io/badge/Website-shallinta.github.io%2Fnuwa--dual--mode-8b5cf6)](https://shallinta.github.io/nuwa-dual-mode/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Standard-green)](https://agentskills.io) [![Multi-Runtime](https://img.shields.io/badge/Runtime-Claude%20Code%20·%20Codex%20·%20Cursor%20·%20OpenClaw%20·%20Hermes-blueviolet)](#安装) [![Inspired by nuwa-skill](https://img.shields.io/badge/Inspired%20by-nuwa--skill-orange)](https://github.com/alchaincyf/nuwa-skill)
+
+<br>
+
+💡 想了解这个技能？来看看：[shallinta.github.io/nuwa-dual-mode](https://shallinta.github.io/nuwa-dual-mode/)
+
+<br>
 
 <br>
 
