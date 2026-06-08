@@ -4,11 +4,11 @@
 
 > *「角色扮演让人活过来,方法论让人能干活——双模式蒸馏二合一。」*
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Standard-green)](https://agentskills.io) [![Multi-Runtime](https://img.shields.io/badge/Runtime-Claude%20Code%20·%20Codex%20·%20Cursor%20·%20OpenClaw%20·%20Hermes-blueviolet)](#安装) [![Inspired by nuwa-skill](https://img.shields.io/badge/Inspired%20by-nuwa--skill-orange)](https://github.com/alchaincyf/nuwa-skill)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Standard-green)](https://agentskills.io) [![Multi-Runtime](https://img.shields.io/badge/Runtime-Claude%20Code%20·%20Codex%20·%20Cursor%20·%20OpenClaw%20·%20Hermes-blueviolet)](#安装) [![Inspired by nuwa-skill](https://img.shields.io/badge/Inspired%20by-nuwa--skill-orange)](https://github.com/alchaincyf/nuwa-skill) [![Website](https://img.shields.io/badge/Website-shallinta.github.io%2Fnuwa--dual--mode-8b5cf6)](https://shallinta.github.io/nuwa-dual-mode/)
 
 <br>
 
-**git **
+**把任意人物 / 角色 / 主题蒸馏为一份「视角 Skill」——既可以用本人的口吻和你对话(Persona),也可以把本人的方法论拿来诊断你的项目(Toolkit)。**
 
 <sub>基于开放的 [Agent Skills 协议](https://agentskills.io),可在 Claude Code、Codex、Cursor、OpenClaw、Hermes、CodeBuddy、Workbuddy、Gemini CLI、OpenCode 等 50+ 兼容 runtime 中运行。</sub>
 
@@ -16,7 +16,7 @@
 
 女娲·Dual-Mode 是 [花叔的 nuwa-skill](https://github.com/alchaincyf/nuwa-skill) 的一个变体分支。同一份调研、同一份心智模型,通过 Persona(第一人称扮演)和 Toolkit(第三人称方法论工具)两个调用入口暴露;蒸馏开始前,女娲会先识别这个对象可能被怎么用,再按对应用法构造产物。
 
-[看效果](#效果示例) · [安装](#安装) · [使用](#使用) · [设计要点](#设计要点) · [工作原理](#工作原理) · [与原版的关系](#与原版-nuwa-skill-的关系)
+[🌐 在线预览](https://shallinta.github.io/nuwa-dual-mode/) · [看效果](#效果示例) · [安装](#安装) · [使用](#使用) · [设计要点](#设计要点) · [工作原理](#工作原理) · [与原版的关系](#与原版-nuwa-skill-的关系)
 
 </div>
 
