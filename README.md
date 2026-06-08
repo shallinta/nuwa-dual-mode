@@ -2,6 +2,8 @@
 
 # 女娲 · Dual-Mode
 
+![dual-mode-header](./assets/dual-mode-header.png)
+
 > *「角色扮演让人活过来,方法论让人能干活——双模式蒸馏二合一。」*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Standard-green)](https://agentskills.io) [![Multi-Runtime](https://img.shields.io/badge/Runtime-Claude%20Code%20·%20Codex%20·%20Cursor%20·%20OpenClaw%20·%20Hermes-blueviolet)](#安装) [![Inspired by nuwa-skill](https://img.shields.io/badge/Inspired%20by-nuwa--skill-orange)](https://github.com/alchaincyf/nuwa-skill)
@@ -203,6 +205,8 @@ Karpathy 的方法 ❯ 调用招式:From scratch 教学法 + Software 2.0 三层
 
 ---
 
+![dual-mode-concept](./assets/dual-mode-concept.png)
+
 ## 双模式架构是什么
 
 女娲·Dual-Mode 的核心结构是:同一份调研、同一份心智模型,通过两个调用入口暴露;每个 skill 默认承载两副面孔,可以中途切换。
@@ -216,6 +220,8 @@ Karpathy 的方法 ❯ 调用招式:From scratch 教学法 + Software 2.0 三层
 女娲会根据人物画像和意图推断结果建议形态(投资家偏 Toolkit 主导、虚构角色和创作型人物偏 Persona 主导、纯主题走单 Toolkit),但**必须经过用户确认**才进入下一步,术语含义会同步用大白话解释。
 
 ---
+
+![dual-mode-flow](./assets/dual-mode-flow.png)
 
 ## 设计要点
 
