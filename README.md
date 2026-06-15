@@ -28,6 +28,20 @@
 
 ---
 
+## ⚡ 快速安装
+
+```bash
+# ClawHub (OpenClaw)
+openclaw skills install nuwa-dual-mode
+
+# npx (通用)
+npx skills add shallinta/nuwa-dual-mode --skill nuwa-dual-mode
+```
+
+> 或者直接告诉你的 Agent：`帮我安装这个 skill: https://github.com/shallinta/nuwa-dual-mode`
+
+---
+
 ## 效果示例
 
 ### Persona 模式 —— 真人对话
