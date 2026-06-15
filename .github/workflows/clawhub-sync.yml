@@ -15,7 +15,7 @@ jobs:
   sync:
     uses: openclaw/clawhub/.github/workflows/skill-publish.yml@main
     with:
-      mode: publish-catalog
+      dry_run: false
       owner: shallinta
     secrets:
       CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
