@@ -1,0 +1,21 @@
+name: Sync to ClawHub
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'skills/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  sync:
+    uses: openclaw/clawhub/.github/workflows/skill-publish.yml@main
+    with:
+      mode: publish-catalog
+      owner: shallinta
+    secrets:
+      CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
