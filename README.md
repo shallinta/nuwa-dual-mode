@@ -310,7 +310,19 @@ npx skills add shallinta/nuwa-dual-mode --skill nuwa-dual-mode
 
 需要指定 runtime 时加 `-a claude-code` / `-a codex` / `-a cursor` / `-a openclaw` 等参数。
 
-### 方式三:手动安装
+### 方式三:ClawHub 安装(OpenClaw 用户)
+
+```bash
+openclaw skills install nuwa-dual-mode
+```
+
+也可在 OpenClaw 对话中直接说:
+
+```
+安装 nuwa-dual-mode
+```
+
+### 方式四:手动安装
 
 <details>
 <summary>展开查看各 runtime 的 skills 目录</summary>
