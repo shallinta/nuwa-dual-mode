@@ -114,7 +114,7 @@
   @keyframes ringPulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.15);opacity:1}}
   .ring{animation:ringPulse 2.5s ease-in-out infinite}
 
-  .distill-vis{display:flex;align-items:center;justify-content:center;gap:0;margin:3rem auto 0;max-width:700px;flex-wrap:wrap;}
+  .distill-vis{display:flex;align-items:center;justify-content:center;gap:0;margin:3rem auto 0;max-width:920px;flex-wrap:wrap;}
   .distill-step{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:0 .5rem;position:relative;}
   .distill-step .ds-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:2px solid rgba(200,160,70,.2);background:var(--card);transition:all .4s;}
   .distill-step:hover .ds-icon{border-color:var(--gold);transform:scale(1.1);box-shadow:0 0 24px rgba(200,160,70,.15)}
@@ -307,10 +307,8 @@
 
     <div class="dual-demo glow" style="border-radius:14px">
       <div class="dual-tabs">
-        <div class="dual-tab tab-p active" onclick="switchMode('persona')" data-lang="zh">🎭 Persona · 像本人聊天</div>
-        <div class="dual-tab tab-p active" onclick="switchMode('persona')" data-lang="en">🎭 Persona · Chat Like Them</div>
-        <div class="dual-tab tab-t" onclick="switchMode('toolkit')" data-lang="zh">🔬 Toolkit · 把方法当工具</div>
-        <div class="dual-tab tab-t" onclick="switchMode('toolkit')" data-lang="en">🔬 Toolkit · Method as Tool</div>
+        <div class="dual-tab tab-p active" onclick="switchMode('persona')"><span data-lang="zh">🎭 Persona · 像本人聊天</span><span data-lang="en">🎭 Persona · Chat Like Them</span></div>
+        <div class="dual-tab tab-t" onclick="switchMode('toolkit')"><span data-lang="zh">🔬 Toolkit · 把方法当工具</span><span data-lang="en">🔬 Toolkit · Method as Tool</span></div>
       </div>
 
       <div class="dual-panel active" id="panel-p">
