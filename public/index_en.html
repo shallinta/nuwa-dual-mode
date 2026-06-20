@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>女娲 · Dual-Mode — 人物视角 Skill 蒸馏引擎</title>
+<title>女娲 · Dual-Mode — Persona Distillation Engine</title>
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -21,7 +21,7 @@
     background:url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
   }
 
-  /* ── Nav ── */
+  /* Nav */
   nav{
     position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;
     display:flex;justify-content:space-between;align-items:center;
@@ -32,24 +32,24 @@
   nav .logo span{color:var(--clay-light);font-weight:400;font-size:.85rem;margin-left:.4rem}
   nav a{color:var(--parchment-dim);text-decoration:none;font-size:.85rem;margin-left:1.8rem;transition:color .25s}
   nav a:hover{color:var(--gold)}
+  .nav-cta{background:linear-gradient(135deg,var(--clay),var(--gold-dim));color:#fff!important;padding:.4rem 1.2rem;border-radius:6px;font-weight:600}
   .nav-lang{color:var(--parchment-dim);font-size:.82rem;text-decoration:none;transition:color .25s}
   .nav-lang:hover{color:var(--gold)}
-  .nav-cta{background:linear-gradient(135deg,var(--clay),var(--gold-dim));color:#fff!important;padding:.4rem 1.2rem;border-radius:6px;font-weight:600}
 
   section{padding:5rem 2rem;max-width:1100px;margin:0 auto;position:relative}
 
-  /* ── Typography ── */
+  /* Typography */
   h1,h2,h3{font-weight:700;letter-spacing:.02em}
   h1{font-size:clamp(2.6rem,5.5vw,4rem);line-height:1.2}
   h2{font-size:clamp(1.7rem,3vw,2.2rem)}
   .serif{font-family:"Noto Serif SC","STSong","Songti SC",serif}
 
-  /* ── Section head ── */
+  /* Section head */
   .sh{text-align:center;margin-bottom:3rem}
   .sh h2{color:var(--parchment)}
   .sh .line{width:40px;height:2px;background:linear-gradient(90deg,var(--clay),var(--gold));margin:1rem auto}
 
-  /* ════════════════ HERO ════════════════ */
+  /* HERO */
   .hero{padding-top:7rem;padding-bottom:3rem;text-align:center;position:relative}
   .hero::after{
     content:'';position:absolute;top:10%;left:50%;transform:translateX(-50%);
@@ -66,9 +66,9 @@
     -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
   }
   .hero h1 em{font-style:normal;-webkit-text-fill-color:var(--gold)}
-  .hero .sub{color:var(--parchment-dim);font-size:1.1rem;max-width:580px;margin:1.2rem auto 3rem;line-height:1.9}
+  .hero .sub{color:var(--parchment-dim);font-size:1.1rem;max-width:620px;margin:1.2rem auto 3rem;line-height:1.9}
 
-  /* ── Interactive Dual-Mode Demo ── */
+  /* Dual-Mode Demo */
   .dual-demo{max-width:800px;margin:0 auto;position:relative}
   .dual-tabs{display:flex;justify-content:center;gap:0;margin-bottom:-1px;}
   .dual-tab{
@@ -94,7 +94,6 @@
   .persona-sender{color:var(--clay-light)!important;opacity:1!important}
   .toolkit-sender{color:var(--jade)!important;opacity:1!important}
 
-  /* ── Visual badges ── */
   .vis-badge{
     width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;
     font-size:2rem;margin-bottom:1rem;position:relative;
@@ -105,11 +104,10 @@
   .vis-label-p{color:var(--clay-light)}
   .vis-label-t{color:var(--jade)}
 
-  /* ── Pulse ring ── */
   @keyframes ringPulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.15);opacity:1}}
   .ring{animation:ringPulse 2.5s ease-in-out infinite}
 
-  /* ── Distillation Process Visual ── */
+  /* Distillation Process Visual */
   .distill-vis{
     display:flex;align-items:center;justify-content:center;gap:0;margin:3rem auto 0;
     max-width:700px;flex-wrap:wrap;
@@ -127,7 +125,7 @@
   .distill-step .ds-label{font-size:.7rem;color:var(--parchment-dim);text-align:center}
   .distill-arrow{color:var(--gold-dim);font-size:1.2rem;margin:0 .3rem;opacity:.4}
 
-  /* ── Features Grid ── */
+  /* Features Grid */
   .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
   .feat{
     background:var(--card);border:1px solid rgba(200,160,70,.08);border-radius:12px;
@@ -143,7 +141,7 @@
   .feat .f-body h4{font-size:.95rem;margin-bottom:.3rem}
   .feat .f-body p{font-size:.8rem;color:var(--parchment-dim);line-height:1.6}
 
-  /* ── Phase Pipeline ── */
+  /* Phase Pipeline */
   .pipeline{position:relative;max-width:800px;margin:0 auto;padding:2rem 0}
   .pipeline::before{
     content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;
@@ -186,7 +184,6 @@
     font-size:.65rem;padding:.15rem .55rem;border-radius:4px;font-weight:600;
     background:rgba(200,160,70,.08);color:var(--gold-dim);
   }
-  /* checkpoint styling */
   .pipe-step.checkpoint .pipe-node{
     border-color:var(--ember)!important;
     box-shadow:0 0 20px rgba(224,96,64,.35)!important;
@@ -194,7 +191,6 @@
   }
   .pipe-step.checkpoint .pipe-card{border-color:rgba(224,96,64,.2)}
   @keyframes ckPulse{0%,100%{box-shadow:0 0 20px rgba(224,96,64,.35)}50%{box-shadow:0 0 36px rgba(224,96,64,.6)}}
-  /* deliver step */
   .pipe-step.deliver .pipe-node{
     border-color:var(--gold)!important;background:rgba(200,160,70,.15);
     box-shadow:0 0 28px rgba(200,160,70,.4)!important;
@@ -202,7 +198,6 @@
   }
   @keyframes deliverGlow{0%,100%{box-shadow:0 0 28px rgba(200,160,70,.4)}50%{box-shadow:0 0 48px rgba(200,160,70,.7)}}
 
-  /* flowing drops */
   .pipe-drop{
     position:absolute;left:50%;width:6px;height:6px;border-radius:50%;
     background:var(--gold);transform:translate(-50%,0);
@@ -231,7 +226,7 @@
     .pipe-drop{left:28px}
   }
 
-  /* ── Example Gallery ── */
+  /* Example Gallery */
   .ex-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
   .ex-card{
     background:var(--card);border:1px solid rgba(200,160,70,.1);border-radius:12px;
@@ -252,13 +247,13 @@
   .badge-p{background:rgba(200,120,50,.15);color:var(--clay-light)}
   .badge-t{background:rgba(107,160,128,.15);color:var(--jade)}
 
-  /* ── Stats strip ── */
+  /* Stats strip */
   .stats{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin:2rem 0}
   .stat{text-align:center}
   .stat .num{font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--clay-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   .stat .label{font-size:.78rem;color:var(--parchment-dim);margin-top:.2rem}
 
-  /* ── Dual mode comparison table ── */
+  /* Dual mode comparison table */
   .mode-table{width:100%;max-width:800px;margin:0 auto;border-collapse:collapse;font-size:.85rem}
   .mode-table th{text-align:left;padding:.8rem 1rem;border-bottom:1px solid rgba(200,160,70,.2)}
   .mode-table td{padding:.7rem 1rem;border-bottom:1px solid rgba(200,160,70,.06)}
@@ -266,7 +261,7 @@
   .mode-table .col-t th{color:var(--jade);background:rgba(107,160,128,.06)}
   .mode-table .col-vs{text-align:center;color:var(--gold-dim);font-size:.7rem}
 
-  /* ── Install ── */
+  /* Install */
   .install{
     background:var(--card2);border:1px solid rgba(200,160,70,.2);border-radius:12px;
     padding:2.5rem;max-width:720px;margin:0 auto;position:relative;overflow:hidden;
@@ -283,30 +278,28 @@
     font-size:.88rem;border:1px solid rgba(200,160,70,.12);overflow-x:auto;
   }
 
-  /* ── Footer ── */
+  /* Footer */
   footer{text-align:center;padding:3rem 2rem;border-top:1px solid rgba(200,160,70,.08);color:var(--parchment-dim);font-size:.82rem}
   footer a{color:var(--gold);text-decoration:none}
 
-  /* ── Animations ── */
+  /* Animations */
   @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
   .fade-up{animation:fadeUp .8s ease-out both}
   .d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}
 
-  /* ── Floating particles (pure CSS) ── */
   @keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-10px) rotate(1deg)}75%{transform:translateY(6px) rotate(-1deg)}}
   .floating{animation:float 6s ease-in-out infinite}
 
   @keyframes glowPulse{0%,100%{box-shadow:0 0 20px rgba(200,160,70,.08)}50%{box-shadow:0 0 40px rgba(200,160,70,.2)}}
   .glow{animation:glowPulse 4s ease-in-out infinite}
 
-  /* ── Responsive ── */
   @media(max-width:768px){
     .dual-panel.active{flex-direction:column-reverse}
     .dual-panel .vis-col{flex:0 0 auto;flex-direction:row;gap:1rem}
     .dual-tab{padding:.6rem 1.2rem;font-size:.8rem}
     .stats{gap:1.5rem}
     .stat .num{font-size:1.8rem}
-    nav a.nav-link{display:none}.nav-cta,.nav-lang{display:inline-block!important}
+    nav a.nav-link{display:none}.nav-cta{display:inline-block!important}
     .distill-vis{flex-direction:column;gap:.5rem}
     .distill-arrow{transform:rotate(90deg)}
   }
@@ -317,183 +310,185 @@
 <nav>
   <div class="logo">女娲<span>Dual-Mode</span></div>
   <div>
-    <a href="#what" class="nav-link">是什么</a><a href="#demo" class="nav-link">效果演示</a><a href="#how" class="nav-link">蒸馏流程</a><a href="index_en.html">English</a><a href="#install" class="nav-cta">安装</a>
+    <a href="#what" class="nav-link">What</a>
+    <a href="#demo" class="nav-link">Demo</a>
+    <a href="#how" class="nav-link">Pipeline</a>
+    <a href="index.html" class="nav-lang">中文</a>
+    <a href="#install" class="nav-cta">Install</a>
   </div>
 </nav>
 
-<!-- ════════════ HERO ════════════ -->
+<!-- HERO -->
 <section class="hero">
   <div class="tag fade-up">AGENT SKILL · DUAL-MODE</div>
   <h1 class="fade-up d1">女娲 · <em>Dual-Mode</em></h1>
   <p class="sub serif fade-up d2">
-    把任意人物或主题，蒸馏为一份<strong style="color:var(--parchment)">双模式 Agent Skill</strong><br>
-    <em style="color:var(--clay-light)">像本人一样对话</em>
+    Distill any person or topic into a <strong style="color:var(--parchment)">Dual-Mode Agent Skill</strong><br>
+    <em style="color:var(--clay-light)">Chat in their authentic voice</em>
     <span style="color:var(--parchment-dim)"> · </span>
-    <em style="color:var(--jade)">把方法论当工具调用</em>
+    <em style="color:var(--jade)">Deploy their methodology as a tool</em>
   </p>
 
-  <!-- Stats -->
   <div class="stats fade-up d3">
-    <div class="stat"><div class="num">50+</div><div class="label">兼容 Runtime</div></div>
-    <div class="stat"><div class="num">12+</div><div class="label">意图维度自动推断</div></div>
-    <div class="stat"><div class="num">6</div><div class="label">Agent 并行调研</div></div>
-    <div class="stat"><div class="num">2</div><div class="label">双模式入口</div></div>
+    <div class="stat"><div class="num">50+</div><div class="label">Runtimes</div></div>
+    <div class="stat"><div class="num">12+</div><div class="label">Intent Dimensions</div></div>
+    <div class="stat"><div class="num">6</div><div class="label">Parallel Agents</div></div>
+    <div class="stat"><div class="num">2</div><div class="label">Dual Modes</div></div>
   </div>
 
-  <!-- Distillation visual -->
   <div class="distill-vis fade-up d4">
     <div class="distill-step">
       <div class="ds-icon">👤</div>
-      <div class="ds-label">任意人物<br>角色 / 主题</div>
+      <div class="ds-label">Any Person<br>Character / Topic</div>
     </div>
     <div class="distill-arrow">→</div>
     <div class="distill-step">
       <div class="ds-icon">🔥</div>
-      <div class="ds-label">6-Agent<br>并行调研</div>
+      <div class="ds-label">6-Agent<br>Parallel Research</div>
     </div>
     <div class="distill-arrow">→</div>
     <div class="distill-step">
       <div class="ds-icon">🧠</div>
-      <div class="ds-label">心智模型<br>两栏提炼</div>
+      <div class="ds-label">Mental Model<br>Two-Column Extraction</div>
     </div>
     <div class="distill-arrow">→</div>
     <div class="distill-step">
       <div class="ds-icon">⚗️</div>
-      <div class="ds-label">双模式<br>Skill 产物</div>
+      <div class="ds-label">Dual-Mode<br>Skill Artifact</div>
     </div>
     <div class="distill-arrow">→</div>
     <div class="distill-step">
       <div class="ds-icon floating" style="font-size:2rem">🎭</div>
-      <div class="ds-label">Persona<br>扮演对话</div>
+      <div class="ds-label">Persona<br>Roleplay Chat</div>
     </div>
     <div style="display:flex;align-items:center;color:var(--gold-dim);font-size:.7rem;margin:0 .3rem">+</div>
     <div class="distill-step">
       <div class="ds-icon floating" style="font-size:2rem;animation-delay:1.5s">🔬</div>
-      <div class="ds-label">Toolkit<br>方法工具</div>
+      <div class="ds-label">Toolkit<br>Method Tools</div>
     </div>
   </div>
 </section>
 
-<!-- ════════════ WHAT ════════════ -->
+<!-- WHAT -->
 <section id="what">
-  <div class="sh"><h2>同一份心智模型，两副面孔</h2><div class="line"></div></div>
+  <div class="sh"><h2>One Mental Model, Two Faces</h2><div class="line"></div></div>
 
   <div class="feat-grid">
     <div class="feat">
       <div class="f-icon">🧠</div>
-      <div class="f-body"><h4>蒸馏思维操作系统</h4><p>不是话术模仿。提取一个人的<strong>怎么想、怎么判断、怎么说话、什么不做</strong>。心智模型分两栏：价值观镜片 + 操作招式。</p></div>
+      <div class="f-body"><h4>Distill Cognitive Operating Systems</h4><p>Not surface imitation. Extract <strong>how they think, decide, speak, and what they won't do</strong>. Mental models split into two columns: Value Lenses + Operational Techniques.</p></div>
     </div>
     <div class="feat">
       <div class="f-icon">🎯</div>
-      <div class="f-body"><h4>意图自动推断，不追问用户</h4><p>女娲根据人物画像自动推断<strong>全部可能意图维度</strong>——方法论学习、风格模仿、角色扮演、决策复盘……不问你"想用来干嘛"。</p></div>
+      <div class="f-body"><h4>Auto-Infer Intents — No Asking</h4><p>女娲 infers <strong>all possible intent dimensions</strong> from the subject's profile — methodology learning, style imitation, roleplay, decision review… Never asks "what do you want this for?"</p></div>
     </div>
     <div class="feat">
       <div class="f-icon">🔒</div>
-      <div class="f-body"><h4>关怀红线硬门槛</h4><p>情感陪伴可能性 >0 时，产物必含中/英/新/港/台五地心理热线。Persona 遇到危机信号会<strong>暂时出戏</strong>给真实求助资源。</p></div>
+      <div class="f-body"><h4>Care Red Line — Hard Gate</h4><p>When emotional companionship probability > 0, the artifact must include crisis hotlines for CN / EN / SG / HK / TW. Persona will <strong>break character temporarily</strong> to provide real help resources.</p></div>
     </div>
     <div class="feat">
       <div class="f-icon">⚡</div>
-      <div class="f-body"><h4>6 个 Agent 同时开工</h4><p>著作、对话、表达DNA、他者视角、决策案例、时间线——六个维度<strong>并行调研</strong>，五分钟覆盖单人两小时的调研量。</p></div>
+      <div class="f-body"><h4>6 Agents in Parallel</h4><p>Writings, conversations, expression DNA, external perspectives, decisions, timeline — six dimensions researched <strong>in parallel</strong>. Five minutes covers two hours of solo research.</p></div>
     </div>
     <div class="feat">
       <div class="f-icon">🔄</div>
-      <div class="f-body"><h4>增量更新，不重跑全流程</h4><p>已蒸馏的 skill 支持增量更新——只拉最新动态。三选一：覆盖重做 / <strong>增量更新（推荐）</strong> / 新建 v2 并存。</p></div>
+      <div class="f-body"><h4>Incremental Updates</h4><p>Already-distilled skills support incremental updates — only pull the latest. Three choices: overwrite / <strong>incremental (recommended)</strong> / new v2 alongside.</p></div>
     </div>
     <div class="feat">
       <div class="f-icon">🌐</div>
-      <div class="f-body"><h4>跨 50+ Runtime 通用</h4><p>基于开放的 Agent Skills 协议，Claude Code、Codex、Cursor、OpenClaw、Hermes、Gemini CLI 等均可运行。</p></div>
+      <div class="f-body"><h4>50+ Runtime Universal</h4><p>Built on the open Agent Skills protocol. Runs in Claude Code, Codex, Cursor, OpenClaw, Hermes, Gemini CLI and more.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ════════════ DEMO ════════════ -->
+<!-- DEMO -->
 <section id="demo" style="background:rgba(200,160,70,.02);max-width:100%;padding-left:0;padding-right:0">
   <div style="max-width:1100px;margin:0 auto;padding:0 2rem">
-    <div class="sh"><h2>同一个人，两种入口</h2><div class="line"></div><p style="color:var(--parchment-dim);font-size:.9rem">点击切换，看看段永平的 Persona 和 Toolkit 有什么不同</p></div>
+    <div class="sh"><h2>Same Person, Two Entry Points</h2><div class="line"></div><p style="color:var(--parchment-dim);font-size:.9rem">Toggle to see Duan Yongping's Persona vs Toolkit</p></div>
 
     <div class="dual-demo glow" style="border-radius:14px">
       <div class="dual-tabs">
-        <div class="dual-tab tab-p active" onclick="switchMode('persona')" id="tab-p">
-          🎭 Persona · 像本人聊天
+        <div class="dual-tab tab-p active" onclick="switchMode('persona')">
+          🎭 Persona · Chat Like Them
         </div>
-        <div class="dual-tab tab-t" onclick="switchMode('toolkit')" id="tab-t">
-          🔬 Toolkit · 把方法当工具
+        <div class="dual-tab tab-t" onclick="switchMode('toolkit')">
+          🔬 Toolkit · Method as Tool
         </div>
       </div>
 
       <div class="dual-panel active" id="panel-p">
         <div class="chat-col">
-          <div class="msg-block"><div class="sender">你</div><div class="body">段总，你怎么看现在的白酒股？</div></div>
-          <div class="msg-block"><div class="sender persona-sender">段永平</div><div class="body">白酒这事儿，我老段一直就一个看法：<strong>做对的事情，把事情做对。</strong></div></div>
-          <div class="msg-block"><div class="sender persona-sender">段永平</div><div class="body">你问我"现在"怎么看——我得先把这个"现在"放一边。投资从来不是看"现在贵不贵"，是看<strong>十年后还在不在，十年后还赚不赚钱</strong>。</div></div>
-          <div class="msg-block"><div class="sender persona-sender">段永平</div><div class="body">你问我贵不贵？我不答。我只问你：<em>如果明天股市关三年，你愿不愿意现在这个价持有它？</em><br><br>平常心，平常心。</div></div>
+          <div class="msg-block"><div class="sender">You</div><div class="body">Duan, what do you think about Chinese liquor stocks right now?</div></div>
+          <div class="msg-block"><div class="sender persona-sender">段永平</div><div class="body">Baijiu — my view on this has always been one thing: <strong>do the right thing, and do things right.</strong></div></div>
+          <div class="msg-block"><div class="sender persona-sender">段永平</div><div class="body">You're asking me what I think "right now" — I have to set "right now" aside first. Investing has never been about whether something is "expensive right now." It's about <strong>whether it'll still be here in ten years, and still making money.</strong></div></div>
+          <div class="msg-block"><div class="sender persona-sender">段永平</div><div class="body">So you're asking me whether it's expensive? I won't answer. I'll only ask: <em>if the market closed for three years, would you still want to hold at this price?</em><br><br>Keep a level head. A level head.</div></div>
         </div>
         <div class="vis-col">
           <div class="vis-badge vis-badge-p ring">🎭</div>
           <div class="vis-label vis-label-p">PERSONA</div>
-          <p style="font-size:.7rem;color:var(--parchment-dim);text-align:center;margin-top:.5rem">第一人称<br>带本人口吻<br>有情绪温度</p>
+          <p style="font-size:.7rem;color:var(--parchment-dim);text-align:center;margin-top:.5rem">First Person<br>Authentic Voice<br>Emotional Warmth</p>
         </div>
       </div>
 
       <div class="dual-panel" id="panel-t">
         <div class="chat-col">
-          <div class="msg-block"><div class="sender">你</div><div class="body">用段永平的方法分析泡泡玛特该不该买入</div></div>
-          <div class="msg-block"><div class="sender toolkit-sender">段永平的方法</div><div class="body">调用招式：<strong>Right BPP 三件套</strong> + <strong>Stop Doing List</strong></div></div>
-          <div class="msg-block"><div class="sender toolkit-sender">段永平的方法</div><div class="body">
-            <strong>Right Business</strong>：IP 潮玩，情绪+收藏生意。和茅台同样底层逻辑，但多一个变量——IP 生命周期。<br>
-            <strong>Right People</strong>：创始人披露透明，多次承认踩坑 → ✓<br>
-            <strong>Right Price</strong>：「会买的是徒弟，会卖的是师傅，<em>会等的才是祖师爷</em>。」
+          <div class="msg-block"><div class="sender">You</div><div class="body">Use Duan Yongping's method to analyze whether Pop Mart is a buy</div></div>
+          <div class="msg-block"><div class="sender toolkit-sender">Duan Yongping's Method</div><div class="body">Deploying: <strong>Right BPP Framework</strong> + <strong>Stop Doing List</strong></div></div>
+          <div class="msg-block"><div class="sender toolkit-sender">Duan Yongping's Method</div><div class="body">
+            <strong>Right Business</strong>: IP-based designer toys — emotion + collectibles. Same underlying logic as Moutai, but with an extra variable: IP lifecycle.<br>
+            <strong>Right People</strong>: Founder discloses transparently, admits missteps → ✓<br>
+            <strong>Right Price</strong>: "The apprentice knows how to buy; the master knows how to sell; <em>the grandmaster knows how to wait.</em>"
           </div></div>
         </div>
         <div class="vis-col">
           <div class="vis-badge vis-badge-t ring" style="animation-delay:.5s">🔬</div>
           <div class="vis-label vis-label-t">TOOLKIT</div>
-          <p style="font-size:.7rem;color:var(--parchment-dim);text-align:center;margin-top:.5rem">第三人称<br>调用命名招式<br>结构化分析</p>
+          <p style="font-size:.7rem;color:var(--parchment-dim);text-align:center;margin-top:.5rem">Third Person<br>Named Techniques<br>Structured Analysis</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════ COMPARISON TABLE ════════════ -->
+<!-- COMPARISON TABLE -->
 <section>
   <div class="sh"><h2>Persona vs Toolkit</h2><div class="line"></div></div>
   <div style="overflow-x:auto">
   <table class="mode-table">
     <colgroup><col class="col-p"><col class="col-vs"><col class="col-t"></colgroup>
     <thead>
-      <tr><th>🎭 Persona 模式</th><th></th><th>🔬 Toolkit 模式</th></tr>
+      <tr><th>🎭 Persona Mode</th><th></th><th>🔬 Toolkit Mode</th></tr>
     </thead>
     <tbody>
-      <tr><td><strong>第一人称</strong> · 带本人口吻直接对话</td><td class="col-vs">视角</td><td><strong>第三人称</strong> · 把方法论当工具调用</td></tr>
-      <tr><td>「老罗你怎么看 XX」</td><td class="col-vs">问法</td><td>「用老罗的方法诊断我的项目」</td></tr>
-      <tr><td>沉浸式角色扮演，带情绪与场景感</td><td class="col-vs">体验</td><td>结构化分析，点名调用此人的命名招式</td></tr>
-      <tr><td>简短对话为主，像真人聊天</td><td class="col-vs">风格</td><td>可长可结构化，把方法论讲透</td></tr>
-      <tr><td>含关怀红线，危机时暂时出戏</td><td class="col-vs">安全</td><td>含分级免责，医法类有转介声明</td></tr>
-      <tr><td>适用：想和这个人聊、寻求带入感</td><td class="col-vs">场景</td><td>适用：诊断决策、方法论学习、项目 Review</td></tr>
+      <tr><td><strong>First person</strong> · direct conversation in authentic voice</td><td class="col-vs">Perspective</td><td><strong>Third person</strong> · methodology invoked as a tool</td></tr>
+      <tr><td>"Lao Luo, what do you think of X?"</td><td class="col-vs">Query Style</td><td>"Use Lao Luo's method to diagnose my project"</td></tr>
+      <tr><td>Immersive roleplay with emotion and scene texture</td><td class="col-vs">Experience</td><td>Structured analysis with named recall of personal techniques</td></tr>
+      <tr><td>Short conversational style, like real chat</td><td class="col-vs">Style</td><td>Can be long and structured — explain methodology thoroughly</td></tr>
+      <tr><td>Care Red Line — breaks character in crisis</td><td class="col-vs">Safety</td><td>Tiered disclaimers — med/legal types include referral statements</td></tr>
+      <tr><td>Best for: talking with the person, immersive advice</td><td class="col-vs">Use Case</td><td>Best for: diagnosing decisions, methodology learning, project review</td></tr>
     </tbody>
   </table>
   </div>
 </section>
 
-<!-- ════════════ EXAMPLES ════════════ -->
+<!-- EXAMPLES -->
 <section style="background:rgba(200,160,70,.02);max-width:100%;padding-left:0;padding-right:0">
   <div style="max-width:1100px;margin:0 auto;padding:0 2rem">
-    <div class="sh"><h2>谁都可以被蒸馏</h2><div class="line"></div><p style="color:var(--parchment-dim);font-size:.9rem">真人、虚构、历史、纯方法论——女娲先识别画像再决定产物形态</p></div>
+    <div class="sh"><h2>Anyone Can Be Distilled</h2><div class="line"></div><p style="color:var(--parchment-dim);font-size:.9rem">Real, fictional, historical, pure methodology — 女娲 identifies the profile first, then decides artifact form</p></div>
     <div class="ex-grid">
-      <div class="ex-card"><div class="ex-av av-real">段</div><div class="ex-name">段永平</div><div class="ex-role">投资家 / 企业家</div><div class="ex-badge"><span class="badge badge-b">双模式</span> Toolkit 主导</div><div class="ex-desc">Right BPP 三件套、Stop Doing List、打孔机决策法——像本人聊投资，也能当工具用。</div></div>
-      <div class="ex-card"><div class="ex-av av-real">罗</div><div class="ex-name">罗永浩</div><div class="ex-role">连续创业者 / 段子手</div><div class="ex-badge"><span class="badge badge-b">双模式</span> Persona 主导</div><div class="ex-desc">模仿标志性表达 DNA——句式、节奏、幽默感，激动时就"又激动了，我老罗就是容易激动"。</div></div>
-      <div class="ex-card"><div class="ex-av av-fic">绫</div><div class="ex-name">神里绫华</div><div class="ex-role">游戏角色 · 原神</div><div class="ex-badge"><span class="badge badge-p">单 Persona</span></div><div class="ex-desc">虚构角色情景对话，括号动作描写，开场主动抛话题钩子。不编造官方设定。</div></div>
-      <div class="ex-card"><div class="ex-av av-fic">海</div><div class="ex-name">海绵宝宝</div><div class="ex-role">动画角色</div><div class="ex-badge"><span class="badge badge-b">双模式</span>（用户指定）</div><div class="ex-desc">Persona 还原粉红泡泡式乐观，Toolkit 拆"比奇堡生存哲学"（标注虚构世界免责）。</div></div>
-      <div class="ex-card"><div class="ex-av av-think">K</div><div class="ex-name">Andrej Karpathy</div><div class="ex-role">AI 教育家</div><div class="ex-badge"><span class="badge badge-b">双模式</span> Persona 主导</div><div class="ex-desc">Persona 聊技术品味，Toolkit 用 Software 2.0 + vibe coding 方法教开发。</div></div>
-      <div class="ex-card"><div class="ex-av av-inv">芒</div><div class="ex-name">查理·芒格</div><div class="ex-role">投资家 / 思想家</div><div class="ex-badge"><span class="badge badge-b">双模式</span></div><div class="ex-desc">Lollapalooza 效应、人类误判心理学、逆向思维——聊智慧，也调用多元思维模型。</div></div>
+      <div class="ex-card"><div class="ex-av av-real">段</div><div class="ex-name">Duan Yongping</div><div class="ex-role">Investor / Entrepreneur</div><div class="ex-badge"><span class="badge badge-b">Dual-Mode</span> Toolkit-first</div><div class="ex-desc">Right BPP Framework, Stop Doing List — chat investing philosophy, or deploy as diagnostic tools.</div></div>
+      <div class="ex-card"><div class="ex-av av-real">罗</div><div class="ex-name">Luo Yonghao</div><div class="ex-role">Serial Entrepreneur / Pundit</div><div class="ex-badge"><span class="badge badge-b">Dual-Mode</span> Persona-first</div><div class="ex-desc">Captures signature expression DNA — sentence rhythm, cadence, humor. Gets worked up like the man himself.</div></div>
+      <div class="ex-card"><div class="ex-av av-fic">绫</div><div class="ex-name">Kamisato Ayaka</div><div class="ex-role">Game Character · Genshin</div><div class="ex-badge"><span class="badge badge-p">Single Persona</span></div><div class="ex-desc">Fictional character scenario chat with parenthetical gesture notation. Never fabricates official lore.</div></div>
+      <div class="ex-card"><div class="ex-av av-fic">海</div><div class="ex-name">SpongeBob</div><div class="ex-role">Animated Character</div><div class="ex-badge"><span class="badge badge-b">Dual-Mode</span> (by request)</div><div class="ex-desc">Persona recreates pink-bubble optimism. Toolkit unpacks "Bikini Bottom Survival Philosophy" (fictional-world disclaimer).</div></div>
+      <div class="ex-card"><div class="ex-av av-think">K</div><div class="ex-name">Andrej Karpathy</div><div class="ex-role">AI Educator</div><div class="ex-badge"><span class="badge badge-b">Dual-Mode</span> Persona-first</div><div class="ex-desc">Persona for tech taste chat. Toolkit uses Software 2.0 + vibe coding to teach development.</div></div>
+      <div class="ex-card"><div class="ex-av av-inv">芒</div><div class="ex-name">Charlie Munger</div><div class="ex-role">Investor / Thinker</div><div class="ex-badge"><span class="badge badge-b">Dual-Mode</span></div><div class="ex-desc">Lollapalooza Effect, Psychology of Human Misjudgment, inversion — chat wisdom or deploy mental models.</div></div>
     </div>
   </div>
 </section>
 
-<!-- ════════════ HOW IT WORKS ════════════ -->
+<!-- HOW IT WORKS -->
 <section id="how">
-  <div class="sh"><h2>蒸馏流水线</h2><div class="line"></div><p style="color:var(--parchment-dim);font-size:.9rem">从输入到交付，9 个步骤自动流转——红色标记为显式检查点，必须用户确认才继续</p></div>
+  <div class="sh"><h2>Distillation Pipeline</h2><div class="line"></div><p style="color:var(--parchment-dim);font-size:.9rem">From input to delivery — 9 steps auto-flow. Red markers are explicit checkpoints requiring user confirmation.</p></div>
 
   <div class="pipeline" id="pipeline">
     <div class="pipe-drop"></div>
@@ -504,20 +499,20 @@
     <div class="pipe-step checkpoint">
       <div class="pipe-node">🔍</div>
       <div class="pipe-card">
-        <div class="pipe-phase" style="color:var(--ember)">Phase 0 · 检查点 ✓</div>
-        <div class="pipe-title">入口分流 + 已有 Skill 检测</div>
-        <div class="pipe-desc">识别蒸馏对象的人物画像、活动地域、主要语言。扫描本地是否已有同名 skill——有则触发三选一：覆盖重做 / 增量更新 / 新建 v2 并存。</div>
-        <div class="pipe-tags"><span class="pipe-tag">画像扫描</span><span class="pipe-tag">语言判定</span><span class="pipe-tag">更新检测</span></div>
+        <div class="pipe-phase" style="color:var(--ember)">Phase 0 · Checkpoint ✓</div>
+        <div class="pipe-title">Entry Routing + Existing Skill Detection</div>
+        <div class="pipe-desc">Identify the subject's profile, region, and primary language. Scan locally for existing skills with the same name — if found, trigger three-way choice: overwrite / incremental update / new v2 alongside.</div>
+        <div class="pipe-tags"><span class="pipe-tag">Profile Scan</span><span class="pipe-tag">Language Detection</span><span class="pipe-tag">Update Check</span></div>
       </div>
     </div>
 
     <div class="pipe-step checkpoint">
       <div class="pipe-node">🎯</div>
       <div class="pipe-card">
-        <div class="pipe-phase" style="color:var(--ember)">Phase 0A · 检查点 ✓</div>
-        <div class="pipe-title">意图维度自动推断 + 形态选择</div>
-        <div class="pipe-desc">根据人物画像自动推测 12+ 种意图维度（方法论学习 / 风格模仿 / 角色扮演 / 情感陪伴 / 决策复盘……），举一反三补充独有维度。自动判定产物形态（双/单模式），交给用户确认——首次出现术语时先用白话解释。</div>
-        <div class="pipe-tags"><span class="pipe-tag">12+ 意图</span><span class="pipe-tag">自动判定</span><span class="pipe-tag">术语解释</span></div>
+        <div class="pipe-phase" style="color:var(--ember)">Phase 0A · Checkpoint ✓</div>
+        <div class="pipe-title">Auto Intent Inference + Form Selection</div>
+        <div class="pipe-desc">Infer 12+ intent dimensions from subject profile (methodology / style imitation / roleplay / emotional companionship / decision review…). Extrapolate unique dimensions. Auto-determine artifact form (dual/single mode) — present to user for confirmation. First-time terms explained in plain language.</div>
+        <div class="pipe-tags"><span class="pipe-tag">12+ Intents</span><span class="pipe-tag">Auto-Detect</span><span class="pipe-tag">Term Explanation</span></div>
       </div>
     </div>
 
@@ -525,19 +520,19 @@
       <div class="pipe-node">⚡</div>
       <div class="pipe-card">
         <div class="pipe-phase" style="color:var(--gold)">Phase 1</div>
-        <div class="pipe-title">6 个 Agent 并行调研</div>
-        <div class="pipe-desc">著作文献 / 对话访谈 / 表达 DNA / 他者评价 / 决策案例 / 时间线——六个维度同时开工，按人物语言地域自动切换信息源白名单。一手来源优先，知乎/公众号/百度百科永久排除。</div>
-        <div class="pipe-tags"><span class="pipe-tag">并行调研</span><span class="pipe-tag">信息源过滤</span><span class="pipe-tag">双语策略</span></div>
+        <div class="pipe-title">6-Agent Parallel Research</div>
+        <div class="pipe-desc">Writings / conversations / expression DNA / external views / decisions / timeline — six dimensions run simultaneously. Source whitelist auto-adjusted by subject's language and region. Primary sources first; Zhihu/WeChat/Baidu Baike permanently excluded.</div>
+        <div class="pipe-tags"><span class="pipe-tag">Parallel Research</span><span class="pipe-tag">Source Filtering</span><span class="pipe-tag">Bilingual Strategy</span></div>
       </div>
     </div>
 
     <div class="pipe-step checkpoint">
       <div class="pipe-node">📊</div>
       <div class="pipe-card">
-        <div class="pipe-phase" style="color:var(--ember)">Phase 1.5 · 检查点 ✓</div>
-        <div class="pipe-title">调研质量摘要</div>
-        <div class="pipe-desc">生成一手/二手来源占比、跨 Agent 矛盾点检测、信息不足维度标注。总来源数 < 10 时建议降低期望或补充调研。</div>
-        <div class="pipe-tags"><span class="pipe-tag">质量审计</span><span class="pipe-tag">矛盾检测</span><span class="pipe-tag">来源占比</span></div>
+        <div class="pipe-phase" style="color:var(--ember)">Phase 1.5 · Checkpoint ✓</div>
+        <div class="pipe-title">Research Quality Summary</div>
+        <div class="pipe-desc">Generate primary/secondary source ratio, cross-agent contradiction detection, under-informed dimension flags. Under 10 total sources → recommend lowering expectations or supplementing research.</div>
+        <div class="pipe-tags"><span class="pipe-tag">Quality Audit</span><span class="pipe-tag">Contradictions</span><span class="pipe-tag">Source Ratio</span></div>
       </div>
     </div>
 
@@ -545,9 +540,9 @@
       <div class="pipe-node">🧠</div>
       <div class="pipe-card">
         <div class="pipe-phase" style="color:var(--gold)">Phase 2</div>
-        <div class="pipe-title">心智模型框架提炼</div>
-        <div class="pipe-desc">三重验证提取核心思维模型。分两栏：<strong>Part A 价值观镜片（2-5 个）</strong>——跨域复现/生成力/排他性；<strong>Part B 操作招式（1-5 个）</strong>——此人亲口命名的可操作清单。同人与官方冲突时暂停询问。</div>
-        <div class="pipe-tags"><span class="pipe-tag">三重验证</span><span class="pipe-tag">两栏分拆</span><span class="pipe-tag">同人协商</span></div>
+        <div class="pipe-title">Mental Model Framework Extraction</div>
+        <div class="pipe-desc">Triple Validation extraction of core mental models. Two columns: <strong>Part A — Value Lenses (2-5)</strong> — cross-domain recurrence / generative power / distinctiveness; <strong>Part B — Operational Techniques (1-5)</strong> — personally-named actionable checklists. Fan-work vs official conflicts trigger pause for user decision.</div>
+        <div class="pipe-tags"><span class="pipe-tag">Triple Validation</span><span class="pipe-tag">Two Columns</span><span class="pipe-tag">Fan-Work Negotiation</span></div>
       </div>
     </div>
 
@@ -555,19 +550,19 @@
       <div class="pipe-node">🏗️</div>
       <div class="pipe-card">
         <div class="pipe-phase" style="color:var(--gold)">Phase 3</div>
-        <div class="pipe-title">Skill 构建与注入</div>
-        <div class="pipe-desc">按模板生成三层目录（shared / mode-persona / mode-toolkit）。注入功能矩阵、关怀红线（5 地区热线 + 兜底）、时代锚定声明、分级免责、时效性声明、Agentic Protocol。</div>
-        <div class="pipe-tags"><span class="pipe-tag">模板填充</span><span class="pipe-tag">关怀红线</span><span class="pipe-tag">时效声明</span></div>
+        <div class="pipe-title">Skill Construction & Injection</div>
+        <div class="pipe-desc">Build 3-layer directory (shared / mode-persona / mode-toolkit) from templates. Inject feature matrix, Care Red Line (5-region hotlines + fallback), era anchoring statement, tiered disclaimers, timeliness declaration, Agentic Protocol.</div>
+        <div class="pipe-tags"><span class="pipe-tag">Template Fill</span><span class="pipe-tag">Care Red Line</span><span class="pipe-tag">Timeliness</span></div>
       </div>
     </div>
 
     <div class="pipe-step checkpoint">
       <div class="pipe-node">🔬</div>
       <div class="pipe-card">
-        <div class="pipe-phase" style="color:var(--ember)">Phase 4 · 检查点 ✓</div>
-        <div class="pipe-title">质量验证 + 修复循环</div>
-        <div class="pipe-desc">按推断意图选择验证套件。Toolkit 招式枚举校验（亲口招式全部召回，漏一个 = FAIL）。关怀红线三类信号模拟（普通低落/极端情绪/不健康依赖）全过才算 PASS。<strong>最多 2 轮修复，第 2 轮仍 FAIL 必须用户确认是否交付。</strong></div>
-        <div class="pipe-tags"><span class="pipe-tag">招式校验</span><span class="pipe-tag">关怀测试</span><span class="pipe-tag">2轮上限</span></div>
+        <div class="pipe-phase" style="color:var(--ember)">Phase 4 · Checkpoint ✓</div>
+        <div class="pipe-title">Quality Validation + Repair Cycle</div>
+        <div class="pipe-desc">Select validation suite by inferred intents. Toolkit technique enumeration check (all personally-named techniques must be recalled — miss one = FAIL). Care Red Line three-signal simulation (ordinary low / extreme distress / unhealthy dependency) — all three must PASS. <strong>Max 2 repair cycles; if still FAIL at cycle 2, user must confirm whether to deliver.</strong></div>
+        <div class="pipe-tags"><span class="pipe-tag">Technique Check</span><span class="pipe-tag">Care Test</span><span class="pipe-tag">2-Cycle Limit</span></div>
       </div>
     </div>
 
@@ -575,38 +570,38 @@
       <div class="pipe-node">✨</div>
       <div class="pipe-card">
         <div class="pipe-phase" style="color:var(--gold)">Phase 5</div>
-        <div class="pipe-title">双 Agent 精炼</div>
-        <div class="pipe-desc">两个独立 Agent 分别审查：意图维度覆盖齐全度 + 强制 section 注入完整度。交叉验证后合并建议，确保产物没有遗漏。</div>
-        <div class="pipe-tags"><span class="pipe-tag">交叉验证</span><span class="pipe-tag">意图齐全</span><span class="pipe-tag">section 完整</span></div>
+        <div class="pipe-title">Dual-Agent Refinement</div>
+        <div class="pipe-desc">Two independent agents review separately: intent dimension coverage completeness + mandatory section injection completeness. Cross-validation with merged recommendations ensures no omissions.</div>
+        <div class="pipe-tags"><span class="pipe-tag">Cross-Validation</span><span class="pipe-tag">Intent Coverage</span><span class="pipe-tag">Section Complete</span></div>
       </div>
     </div>
 
     <div class="pipe-step deliver">
       <div class="pipe-node">🚀</div>
       <div class="pipe-card">
-        <div class="pipe-phase" style="color:var(--gold)">交付</div>
-        <div class="pipe-title">打包注册 + 五段收尾</div>
-        <div class="pipe-desc">产物上传注册为 custom skill。主消息输出五段话：产物形态 / 使用方式（含切换模式与典型问法）/ 局限提醒 / 后续维护（修改/更新/卸载）/ Skill 简介与女娲引导。不可省略。</div>
-        <div class="pipe-tags"><span class="pipe-tag">打包注册</span><span class="pipe-tag">五段收尾</span><span class="pipe-tag">维护说明</span></div>
+        <div class="pipe-phase" style="color:var(--gold)">Delivery</div>
+        <div class="pipe-title">Package & Register + 5-Part Conclusion</div>
+        <div class="pipe-desc">Upload and register as custom skill. Main message outputs five parts: artifact form / usage (including mode switching and sample queries) / limitation reminders / ongoing maintenance (modify / update / uninstall) / skill summary with 女娲 guidance. None may be omitted.</div>
+        <div class="pipe-tags"><span class="pipe-tag">Package & Register</span><span class="pipe-tag">5-Part Conclusion</span><span class="pipe-tag">Maintenance Guide</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════ INSTALL ════════════ -->
+<!-- INSTALL -->
 <section id="install">
-  <div class="sh"><h2>开始使用</h2><div class="line"></div></div>
+  <div class="sh"><h2>Get Started</h2><div class="line"></div></div>
   <div class="install">
-    <p>方式一 · 告诉你的 Agent（推荐）</p>
-    <code>帮我安装这个 skill: https://github.com/shallinta/nuwa-dual-mode</code>
-    <p>方式二 · npx skills CLI</p>
+    <p>Method 1 · Tell Your Agent (Recommended)</p>
+    <code>Install this skill for me: https://github.com/shallinta/nuwa-dual-mode</code>
+    <p>Method 2 · npx skills CLI</p>
     <code>npx skills add shallinta/nuwa-dual-mode --skill nuwa-dual-mode</code>
-    <p style="text-align:center;margin-top:1.2rem">支持 Claude Code · Codex · Cursor · OpenClaw · Hermes · Gemini CLI 等 50+ runtime</p>
+    <p style="text-align:center;margin-top:1.2rem">Supports Claude Code · Codex · Cursor · OpenClaw · Hermes · Gemini CLI and 50+ runtimes</p>
   </div>
 </section>
 
 <footer>
-  <p><a href="https://github.com/shallinta/nuwa-dual-mode">GitHub</a> · MIT License · 站在 <a href="https://github.com/alchaincyf/nuwa-skill">花叔 nuwa-skill</a> 的肩膀上</p>
+  <p><a href="https://github.com/shallinta/nuwa-dual-mode">GitHub</a> · MIT License · Standing on the shoulders of <a href="https://github.com/alchaincyf/nuwa-skill">花叔 nuwa-skill</a></p>
 </footer>
 
 <script>
@@ -622,12 +617,11 @@ function switchMode(mode) {
   }
 }
 
-// Pipeline scroll animation — reveal each step with stagger
 const pipeObserver = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
       const steps = e.target.querySelectorAll('.pipe-step');
-      steps.forEach((step, i)=>{
+      steps.forEach((step,i)=>{
         setTimeout(()=>step.classList.add('visible'), i*120);
       });
       pipeObserver.unobserve(e.target);
@@ -636,7 +630,6 @@ const pipeObserver = new IntersectionObserver((entries)=>{
 },{threshold:0.15});
 pipeObserver.observe(document.getElementById('pipeline'));
 
-// Section fade-in
 const secObserver = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.style.opacity='1'});
 },{threshold:0.1});
